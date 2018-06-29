@@ -24,43 +24,43 @@ O ambiente virtual é um ambiente onde os requisitos do seu projeto estarão ins
 Crie uma pasta onde você colocará seu projeto. Vamos chamá-lo de tddpy. Para fazer isso, abra seu Terminal (ou PowerShell no Windows). Digite:
 
 **No Windows**
-'''
+```
 $ cd myuser
 $ mkdir tddpy
 $ cd tddpy
 $ py -3.7 -m venv virtualenv
-
+```
 **No Linux ou Mac**
-'''
+```
 $ cd myuser
 $ mkdir tddpy
 $ cd tddpy
 $ python3 -m venv virtualenv
-'''
+```
 
 Durante o projeto, ativaremos e desativaremos o ambiente virtual. Para fazer isso, digite (você deve estar dentro do diretório tddpy):
 
 **No Windows**
-'''
+```
 source virtualenv/Scripts/activate
 deactivate
-'''
+```
 
 **No Linux ou Mac**
-'''
+```
 source virtualenv/bin/activate
 deactivate
-'''
+```
 
 # Passo 3 - Instalação do Django e do Selenium
 Abra seu terminal (console) e, estando com o ambiente virtual ativado, digite:
 
-'''
+```
 (virtualenv) $ pip install "django" "selenium<4"
 Collecting django....
 Installing collected packages: pytz, django, selenium
 Successfully installed django-2.0.6 pytz-2018.4 selenium-3.13.0
-'''
+```
 
 É isso! O resto, faremos no evento! Até lá!
 
