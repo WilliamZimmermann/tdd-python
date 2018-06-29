@@ -17,6 +17,19 @@ Baixe o arquivo de instalação do Python 3.7.*, se você ainda não tiver. Voc�
 * Para Windows 64bits: https://www.python.org/ftp/python/3.7.0/python-3.7.0.exe
 * Para Linux: versões mais recentes já tem o Python instalado por padrão. Se não tiver, dê um apt install python3.6-venv.
 
+# Instalação do Geckodriver
+O Geckodriver é uma ferramenta de automação de testes. Ao executar os testes, através do Geckodriver será executado seu Firefox. Baixe o Geckodriver aqui: https://github.com/mozilla/geckodriver/releases
+
+Após, mova o arquivo interno para:
+
+**No Windows**
+Mesmo caminho onde estará o código do projeto
+
+**No Mac ou Linux**
+```
+sudo mv /Users/myuser/Downloads/geckodriver /usr/local/bin
+```
+
 # Passo 2 - Ambiente virtual
 
 O ambiente virtual é um ambiente onde os requisitos do seu projeto estarão instaldos. Com isso, você não precisará alterar suas configurações do Python globais toda vez que seu projeto for alterado - precisará alterar somente as configurações desse ambiente virtual.
