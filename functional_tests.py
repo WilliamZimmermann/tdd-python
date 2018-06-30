@@ -1,31 +1,44 @@
 from selenium import webdriver
+import unittest
 
-# Pafúncio ouviu falar sobre um novo App de tarefas Ele vai chegar esse site usando o Firefox
-browser = webdriver.Firefox()
-browser.get('http://localhost:8000')
+class NovoVisitanteTest(unittest.TestCase):
 
-# Ele vê que o título da página menciona lista de tarefas
-assert 'Lista de Tarefas do Will' in browser.title
+    def setUp(self):
+        self.browser = webdriver.Firefox()
 
-# Ele é convidado a inserir um item à lista
+    def tearDown(self):
+        self.browser.quit()
 
-# Ele digita "Comprar polenta" dentro de um input
+    def test_pode_comecar_uma_lista_e_pegala_depois(self):
+        # Pafúncio ouviu falar sobre um novo App de tarefas Ele vai chegar esse site usando o Firefox
+        # Pafúncio abre o site
+        self.browser.get('http://localhost:8000')
 
-# Quando ele pressiona Enter, a página atualiza e, agora, a
-# página lista:
-# 1: Comprar polenta
+        # Ele vê que o título da página menciona lista de tarefas
+        self.assertIn('Lista de Tarefas do Will', self.browser.title)
+        self.fail('Acaba o teste!')
 
-# Ainda há uma caixa de texto convidando-o a adicionar outro
-# item. Ele digita "Comprar Guaraná Fruki"
+        # Ele é convidado a inserir um item à lista
 
-# A página atualiza de novo e agora mostra os dois itens
+        # Ele digita "Comprar polenta" dentro de um input
 
-# Pafúncio gostaria que o site se lembrasse da lista dele.
-# Ele vê que o site gerou uma URL única para ele. Há alguns
-# textos que explicam isso para ele
+        # Quando ele pressiona Enter, a página atualiza e, agora, a
+        # página lista:
+        # 1: Comprar polenta
 
-# Ele visita a URL e sua lista ainda está lá
+        # Ainda há uma caixa de texto convidando-o a adicionar outro
+        # item. Ele digita "Comprar Guaraná Fruki"
 
-# Satisfeito, ele volta a dormir
+        # A página atualiza de novo e agora mostra os dois itens
 
-browser.quit()
+        # Pafúncio gostaria que o site se lembrasse da lista dele.
+        # Ele vê que o site gerou uma URL única para ele. Há alguns
+        # textos que explicam isso para ele
+
+        # Ele visita a URL e sua lista ainda está lá
+
+        # Satisfeito, ele volta a dormir
+
+
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')
