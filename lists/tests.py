@@ -1,7 +1,9 @@
+from django.urls import resolve
 from django.test import TestCase
+from lists.views import home_page
 
+class HomePageTest(TestCase):
 
-class SmokeTest(TestCase):
-
-    def test_conta_errada(self):
-        self.assertEqual(1 + 1, 3)
+    def test_url_raiz_direciona_para_view_da_home_page(self):
+        found = resolve('/')
+        self.assertEqual(found.func, home_page)
